@@ -8,7 +8,23 @@ class TechStoreAPI {
         this.shopCoordinates = { lat: 59.91795, lng: 30.30897 };
     }
 
-   
+    // Получение реальных изображений товаров через Unsplash API
+    async getProductImages(query = 'gaming computer', count = 10) {
+        try {
+            // В реальном приложении раскомментировать и использовать свой API ключ
+            /*
+            const response = await fetch(
+                `https://api.unsplash.com/search/photos?query=${query}&per_page=${count}&client_id=${this.unsplashAccessKey}`
+            );
+            
+            if (!response.ok) throw new Error('Ошибка загрузки изображений');
+            
+            const data = await response.json();
+            return data.results.map(photo => ({
+                url: photo.urls.regular,
+                alt: photo.alt_description
+            }));
+            */
             
             // Заглушка для демонстрации
             return this.mockProductImages(count);
